@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Entry Form | Nachiket Patel </title>
+    <link rel="icon" href="i.png">
+    <link rel="stylesheet" href="style.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form method="post" autocomplete="off" name="google-sheet">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details"> First Name</span>
+            <input type="text" name="First Name" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details"> Last Name</span>
+            <input type="text" name="Last Name" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" name="Email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" name="Mobile No" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Degree</span>
+            <input type="text" name="Degree" placeholder="B.Tech,Msc,Bsc.." required>
+          </div>
+          <div class="input-box">
+            <span class="details">Branch </span>
+            <input type="text" name="Branch" placeholder="CSE,CBE,Micro Bio..." required>
+          </div>
+        </div>
+        
+        <div class="button">
+          <input type="submit" value="Send Data">
+        </div>
+      
+        <div class="button">
+          <input type="reset" value="Reset">
+        </div>
+      </form>
+    </div>
+  </div>
+
+          
+          <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbynG_9mGgkbypEfWdTuA7R56LtmPtzb-wTQN5tmBbE-CuoCz9eKIGHcJ3EIE6AqQM8/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Registration !!!!"))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
+            
